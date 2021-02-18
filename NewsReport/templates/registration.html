@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="post">
+        <div class="center">
+            <h2 align="center">New User Registration</h2>
+            {% csrf_token %}
+            <table align="center" cellpadding="10">
+                {{ registerForm }}
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit">Submit</button>
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {% if messages %}
+                        {% for result in messages %}
+                        <b style="color:yellow;">{{ result }}</b>
+                        {% endfor %}
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+{% endblock content %}

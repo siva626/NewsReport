@@ -1,0 +1,13 @@
+<html>
+
+<body>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        <table border="1">
+            {{ form }}
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
